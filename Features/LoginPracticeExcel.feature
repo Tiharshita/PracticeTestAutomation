@@ -1,11 +1,14 @@
-Feature: Title of your feature
-  
-  Scenario Outline: Title of your scenario outline
-    Given I want to write a step with <name>
-    When I check for the <value> in step
-    Then I verify the <status> in step
+Feature: Login Data Driven with Excel
 
-    Examples: 
-      | name  | value | status  |
-      | name1 |     5 | success |
-      | name2 |     7 | Fail    |
+  Scenario Outline: Login Data Driven Excel
+    Given user Launch Browser
+    When user Opens URL "https://practicetestautomation.com/practice-test-login/"
+ 		And user enters username as "<username>" and password as "<password>"
+    And click On Submit
+    Then check page title should be "Logged In Successfully | Practice Test Automation" by passing Email and Password with excel row "<row_index>"
+
+    Examples:
+      |row_index|
+      |1|
+      |2|
+      |3|
